@@ -27,6 +27,12 @@ public class GearBox {
 
     int gear = 0;
 
+    final int MAX_GEAR = 6;
+    final int MIN_GEAR = 1;
+    final int UPPER_RPM_BOUND = 2000;
+    final int LOWER_RPM_BOUND = 500;
+
+
     /**
      * Automatic gear box shifting, which shifts up if the engine goes over
      * 2000 rpm, and down if it goes under 500.
@@ -34,12 +40,12 @@ public class GearBox {
      * @param rpm Current revolutions per minute
      */
     public void shiftGear(int rpm) {
-        if (gear <= 0) {
+        if (gear < MIN_GEAR) {
             return;
         }
-        if (rpm > 2000 && gear < 6) {
+        if (rpm > UPPER_RPM_BOUND && gear < MAX_GEAR) {
             gear++;
-        } else if (rpm < 500 && gear > 1) {
+        } else if (rpm < LOWER_RPM_BOUND && gear > MIN_GEAR) {
             gear--;
         }
     }
