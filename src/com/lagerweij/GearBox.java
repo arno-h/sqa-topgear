@@ -27,10 +27,10 @@ public class GearBox {
 
     int gear = 0;
 
-    final int MAX_GEAR = 6;
-    final int MIN_GEAR = 1;
-    final int UPPER_RPM_BOUND = 2000;
-    final int LOWER_RPM_BOUND = 500;
+    static final int MAX_GEAR = 6;
+    static final int MIN_GEAR = 1;
+    static final int UPPER_RPM_BOUND = 2000;
+    static final int LOWER_RPM_BOUND = 500;
 
 
     /**
