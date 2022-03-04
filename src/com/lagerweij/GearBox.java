@@ -26,12 +26,16 @@ package com.lagerweij;
 public class GearBox {
 
     int gear = 0;
-    int e = 0;
 
+    /**
+     * Automatic gear box shifting, which shifts up if the engine goes over
+     * 2000 rpm, and down if it goes under 500.
+     *
+     * @param rpm Current revolutions per minute
+     */
     public void shiftGear(int rpm) {
         if (gear < 0) {
             // do nothing!
-            e = rpm;
         } else {
             if (gear > 0) {
                 if (rpm > 2000) {
@@ -40,11 +44,11 @@ public class GearBox {
                     gear--;
                 }
             }
-        } if (gear > 6) {
+        }
+        if (gear > 6) {
             gear--;
         } else if (gear < 1) {
             gear++;
         }
-        e = rpm;
     }
 }
