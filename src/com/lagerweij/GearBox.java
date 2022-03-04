@@ -34,16 +34,13 @@ public class GearBox {
      * @param rpm Current revolutions per minute
      */
     public void shiftGear(int rpm) {
-        if (gear < 0) {
-            // do nothing!
-        } else {
-            if (gear > 0) {
-                if (rpm > 2000) {
-                    gear++;
-                } else if (rpm < 500) {
-                    gear--;
-                }
-            }
+        if (gear <= 0) {
+            return;
+        }
+        if (rpm > 2000) {
+            gear++;
+        } else if (rpm < 500) {
+            gear--;
         }
         if (gear > 6) {
             gear--;

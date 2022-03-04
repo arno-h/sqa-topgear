@@ -45,4 +45,28 @@ public class TestGearBox {
         Assert.assertEquals(1, gearbox.gear);
     }
 
+    @Test
+    public void testNoShiftInNeutral() {
+        GearBox gearbox = new GearBox();
+        gearbox.gear = 0;
+
+        gearbox.shiftGear(400);
+        Assert.assertEquals(0, gearbox.gear);
+
+        gearbox.shiftGear(3000);
+        Assert.assertEquals(0, gearbox.gear);
+    }
+
+    @Test
+    public void testNoShiftInReverse() {
+        GearBox gearbox = new GearBox();
+        gearbox.gear = -1;
+
+        gearbox.shiftGear(400);
+        Assert.assertEquals(-1, gearbox.gear);
+
+        gearbox.shiftGear(3000);
+        Assert.assertEquals(-1, gearbox.gear);
+    }
+
 }
