@@ -28,4 +28,21 @@ public class TestGearBox {
         gearbox.shiftGear(400);
         Assert.assertEquals(2, gearbox.gear);
     }
+
+    @Test
+    public void testNoShiftUpInGear6() {
+        GearBox gearbox = new GearBox();
+        gearbox.gear = 6;
+        gearbox.shiftGear(3000);
+        Assert.assertEquals(6, gearbox.gear);
+    }
+
+    @Test
+    public void testNoShiftDownInGear1() {
+        GearBox gearbox = new GearBox();
+        gearbox.gear = 1;
+        gearbox.shiftGear(400);
+        Assert.assertEquals(1, gearbox.gear);
+    }
+
 }
