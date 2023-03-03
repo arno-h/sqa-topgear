@@ -49,4 +49,12 @@ public class TestGearBox {
         gearBox.shiftGear(2500);
         Assert.assertEquals(0, gearBox.gear);
     }
+
+    @Test
+    public void testRemainInCurrentGear() {
+        GearBox gearBox = new GearBox();
+        gearBox.gear = 4;
+        gearBox.shiftGear(1500);
+        Assert.assertEquals(4, gearBox.gear);
+    }
 }
