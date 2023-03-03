@@ -25,25 +25,25 @@ package com.lagerweij;
 
 public class GearBox {
 
-    private int s = 0;
+    private int gear = 0;
     private int e = 0;
 
-    public void doit(int i) {
-        if (s < 0) {
+    public void shiftGear(int rpm) {
+        if (gear < 0) {
             // do nothing!
-            e = i;
+            e = rpm;
         } else {
-            if (s > 0) {
-                if (i > 2000)
-                    s++;
-            } else if (i < 500) {
-                s--;
+            if (gear > 0) {
+                if (rpm > 2000)
+                    gear++;
+            } else if (rpm < 500) {
+                gear--;
             }
-        } if (s > 6) {
-            s--;
-        } else if (s < 1) {
-            s++;
+        } if (gear > 6) {
+            gear--;
+        } else if (gear < 1) {
+            gear++;
         }
-        e = i;
+        e = rpm;
     }
 }
